@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Paraphrasing Tool</title>
+    <!-- Modern sans-serif font matching the design -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="top-nav">
+            <div class="logo">
+                <span class="ai-text">AI</span> Paraphrasing Tool
+            </div>
+
+        </header>
+
+        <!-- Main Workspace -->
+        <main class="workspace">
+            <!-- Mode Selector -->
+            <div class="mode-selector">
+                <button class="mode-btn active" data-tone="default">Standard</button>
+                <button class="mode-btn" data-tone="casual">Fluency</button>
+                <button class="mode-btn" data-tone="professional">Formal</button>
+                <button class="mode-btn" data-tone="creative">Creative</button>
+                <button class="mode-btn" data-tone="concise">Shorten</button>
+            </div>
+
+            <!-- Panels Container -->
+            <div class="panels-container">
+                <!-- Left: Input Panel -->
+                <div class="panel input-panel">
+                    <div class="output-header">
+                        <h3>Input Text</h3>
+                    </div>
+                    <textarea id="input-text" placeholder="Enter your text here to paraphrase..." autofocus></textarea>
+                    <div class="panel-footer centered-footer">
+                        <button id="paraphrase-btn" class="paraphrase-btn" disabled>Paraphrase</button>
+                    </div>
+                </div>
+
+                <!-- Right: Output Panel -->
+                <div class="panel output-panel">
+                    <div class="output-header">
+                        <h3>Paraphrased Text</h3>
+                    </div>
+                    <div class="output-content-area">
+                        <div id="output-text" class="placeholder">Input your text into this box to see it rephrased...
+                        </div>
+
+                        <!-- Loading State -->
+                        <div class="loader-overlay" id="loader">
+                            <div class="spinner"></div>
+                        </div>
+                    </div>
+                    <div class="panel-footer right-aligned">
+                        <div class="action-buttons">
+                            <button id="copy-btn" class="action-icon-btn" title="Copy text" disabled>
+                                <i class="fa-regular fa-copy"></i>
+                            </button>
+                            <button id="listen-btn" class="action-text-btn" title="Listen to text" disabled>
+                                <i class="fa-solid fa-volume-high"></i> Listen
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Toolbar (Bottom left buttons) -->
+            <div class="bottom-toolbar">
+                <button id="paste-btn" class="toolbar-btn"><i class="fa-regular fa-heart"></i> Paste Text</button>
+                <button id="clear-btn" class="toolbar-btn"><i class="fa-solid fa-rotate-right"></i> Clear</button>
+            </div>
+        </main>
+
+
+
+        <!-- Toast Notification -->
+        <div class="toast" id="toast">Copied to clipboard!</div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>
